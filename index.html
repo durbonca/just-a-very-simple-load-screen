@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head></head>
+
+<body>
+    <style>
+        .fadein {
+            display: flex !important;
+            opacity: .5;
+            animation-name: fadeInOpacity;
+            animation-timing-function: ease-in;
+            animation-duration: 1s;
+        }
+        
+        .fadeout {
+            display: flex !important;
+            animation-name: fadeOutOpacity;
+            animation-timing-function: ease-in;
+            animation-duration: 1s;
+        }
+        
+        .overlay {
+            transition-duration: 1s;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: violet;
+        }
+        
+        .load {
+            color: white;
+            text-align: center;
+        }
+        
+        .load img {
+            animation: rotar 2s linear infinite;
+            filter: invert(100%);
+        }
+        
+        @keyframes rotar {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes fadeInOpacity {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: .5;
+            }
+        }
+        
+        @keyframes fadeOutOpacity {
+            0% {
+                opacity: .5;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <div class="overlay" id="overlay">
+        <div class="load">
+            <h1>CAGANDO... </h1>
+            <h1>POR FAVOR AGUANTAME TANTO WEY...</h1>
+            <h1>O.O</h1>
+            <img src="load.png" alt="" srcset="">
+        </div>
+    </div>
+    <button id="boton">hola</button>
+
+    <script>
+        boton = document.getElementById('boton')
+        overlay = document.getElementById('overlay')
+        boton.addEventListener("click", cargar)
+
+        function cargar() {
+            overlay.className += " fadein";
+
+            setTimeout(fadeout, 3000);
+            setTimeout(end, 4000);
+
+            function fadeout() {
+                overlay.className = "overlay fadeout";
+            }
+
+            function end() {
+                overlay.className = "overlay";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
