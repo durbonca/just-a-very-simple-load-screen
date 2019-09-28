@@ -42,7 +42,27 @@
             animation: rotar 2s linear infinite;
             filter: invert(100%);
         }
+
+        .button {
+            box-shadow: 4px 3px #894ed4;
+            border-radius: 5px;
+            color: white;
+            background: #ee82ee;
+            border: none;
+            width: 86px;
+            height: 35px;
+        }
         
+        .button:active {
+            background: #ce54ce;
+            box-shadow: none;
+            transform: translate(2px, 2px);
+        }
+
+        .button:focus {
+            outline: none;
+        }
+
         @keyframes rotar {
             0% {
                 transform: rotate(0deg);
@@ -79,7 +99,7 @@
             <img src="load.png" alt="" srcset="">
         </div>
     </div>
-    <button id="boton">hola</button>
+    <button id="boton" class="button">hola</button>
 
     <script>
         boton = document.getElementById('boton')
